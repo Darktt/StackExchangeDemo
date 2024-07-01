@@ -51,7 +51,6 @@ class ViewController: UIViewController
         self.tableView.fluent
             .dataSource(self)
             .delegate(self)
-//            .separatorStyle(.none)
             .rowHeight(UITableView.automaticDimension)
             .estimatedRowHeight(UITableView.automaticDimension)
             .register(QuestionCell.self)

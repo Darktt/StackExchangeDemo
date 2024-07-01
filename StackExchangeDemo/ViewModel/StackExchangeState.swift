@@ -22,9 +22,6 @@ struct StackExchangeState
     var endOfPage: Bool = false
     
     public
-    var isFetching: Bool = false
-    
-    public
     var error: StackExchangeError?
     
     public
