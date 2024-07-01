@@ -37,7 +37,7 @@ public
 class Store<State, Action>: ObservableObject
 {
     @Published
-    public private(set)
+    public
     var state: State
     
     private

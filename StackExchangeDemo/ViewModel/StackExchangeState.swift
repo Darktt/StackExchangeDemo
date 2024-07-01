@@ -16,6 +16,9 @@ struct StackExchangeState
     var topQuestions: Array<QuestionItem> = []
     
     public private(set)
+    var questionItem: QuestionItem?
+    
+    public private(set)
     var page: Int = 1
     
     public private(set)
@@ -55,5 +58,13 @@ extension StackExchangeState
             
             self.topQuestions.append(contentsOf: questions)
         }
+    }
+    
+    mutating
+    func questionItem(via questionId: Int)
+    {
+        let item: QuestionItem? = self.topQuestions.first(where: { $0.id == questionId })
+        
+        self.questionItem = item
     }
 }

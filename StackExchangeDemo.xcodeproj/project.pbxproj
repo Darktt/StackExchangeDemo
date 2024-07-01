@@ -38,6 +38,9 @@
 		F2C571192C324697005E224E /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C571172C324697005E224E /* QuestionCell.xib */; };
 		F2C5711C2C324827005E224E /* CustomCellRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5711A2C324827005E224E /* CustomCellRegisterable.swift */; };
 		F2C5711D2C324827005E224E /* CustomReusableViewRegistrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5711B2C324827005E224E /* CustomReusableViewRegistrable.swift */; };
+		F2C5711F2C328A19005E224E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5711E2C328A19005E224E /* Coordinator.swift */; };
+		F2C571222C328CB6005E224E /* QuestionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571202C328CB6005E224E /* QuestionDetailController.swift */; };
+		F2C571232C328CB6005E224E /* QuestionDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C571212C328CB6005E224E /* QuestionDetailController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,6 +88,9 @@
 		F2C571172C324697005E224E /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		F2C5711A2C324827005E224E /* CustomCellRegisterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCellRegisterable.swift; path = "../../../../Documents/Xcode/DTTest-Swift/DTTest/Classes/Protocol/CustomCellRegisterable.swift"; sourceTree = "<group>"; };
 		F2C5711B2C324827005E224E /* CustomReusableViewRegistrable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReusableViewRegistrable.swift; sourceTree = "<group>"; };
+		F2C5711E2C328A19005E224E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F2C571202C328CB6005E224E /* QuestionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailController.swift; sourceTree = "<group>"; };
+		F2C571212C328CB6005E224E /* QuestionDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionDetailController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,8 @@
 				F26BA0162C2D410F0016E88E /* SceneDelegate.swift */,
 				F26BA0182C2D410F0016E88E /* ViewController.swift */,
 				F26BA0392C2D45F40016E88E /* ViewController.xib */,
+				F2C571202C328CB6005E224E /* QuestionDetailController.swift */,
+				F2C571212C328CB6005E224E /* QuestionDetailController.xib */,
 				F26BA0522C2D65B80016E88E /* ViewModel */,
 				F2C571152C32464A005E224E /* Views */,
 			);
@@ -154,6 +162,7 @@
 				F26BA02F2C2D442F0016E88E /* FluentInterface.swift */,
 				F26BA02E2C2D442F0016E88E /* FluentInterface+CustomCellRegisterable.swift */,
 				F26BA0442C2D5C920016E88E /* QuestionsRequest.swift */,
+				F2C5711E2C328A19005E224E /* Coordinator.swift */,
 				F26BA04C2C2D61CC0016E88E /* QuestionsResponse.swift */,
 				F26BA04E2C2D62F20016E88E /* User.swift */,
 			);
@@ -271,6 +280,7 @@
 				F26BA01E2C2D41100016E88E /* Assets.xcassets in Resources */,
 				F2C571192C324697005E224E /* QuestionCell.xib in Resources */,
 				F26BA03A2C2D45F40016E88E /* ViewController.xib in Resources */,
+				F2C571232C328CB6005E224E /* QuestionDetailController.xib in Resources */,
 				F26BA0212C2D41100016E88E /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +300,7 @@
 				F26BA0302C2D442F0016E88E /* FluentInterface+CustomCellRegisterable.swift in Sources */,
 				F26BA0432C2D49AE0016E88E /* APIHandler.swift in Sources */,
 				F26BA03D2C2D47BB0016E88E /* Store.swift in Sources */,
+				F2C5711F2C328A19005E224E /* Coordinator.swift in Sources */,
 				F2B76A8F2C2EA97700D46C25 /* ErrorMiddware.swift in Sources */,
 				F26BA0152C2D410F0016E88E /* AppDelegate.swift in Sources */,
 				F26BA04F2C2D62F20016E88E /* User.swift in Sources */,
@@ -303,6 +314,7 @@
 				F2C5711D2C324827005E224E /* CustomReusableViewRegistrable.swift in Sources */,
 				F26BA0562C2D67CC0016E88E /* StackExchangeState.swift in Sources */,
 				F26BA0412C2D49AE0016E88E /* APIRequest.swift in Sources */,
+				F2C571222C328CB6005E224E /* QuestionDetailController.swift in Sources */,
 				F2C571182C324697005E224E /* QuestionCell.swift in Sources */,
 				F26BA0172C2D410F0016E88E /* SceneDelegate.swift in Sources */,
 			);

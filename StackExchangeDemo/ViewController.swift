@@ -41,6 +41,36 @@ class ViewController: UIViewController
         super.init(coder: coder)
     }
     
+    // MARK: View Live Cycle
+    
+    public override 
+    func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    public override 
+    func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    public override 
+    func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        
+    }
+    
+    public override 
+    func viewDidDisappear(_ animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        
+    }
+    
     public override
     func viewDidLoad()
     {
@@ -182,9 +212,14 @@ extension ViewController: UITableViewDelegate
     public
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-//        let question = self.store.state.topQuestions[indexPath.row]
-//        
-//        let detailVC = QuestionDetailViewController(question: question)
-//        self.navigationController?.pushViewController(detailVC, animated: true)
+        let question = self.store.state.topQuestions[indexPath.row]
+        
+        guard let questionId = question.id else {
+            
+            return
+        }
+        
+        let coordinator = Coordinator.shared
+        coordinator.nextPage(.questionDetail(questionId, self.store), from: self)
     }
 }
