@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit.UIImage
 
 public
 struct StackExchangeState
@@ -23,6 +24,9 @@ struct StackExchangeState
     
     public private(set)
     var endOfPage: Bool = false
+    
+    public private(set)
+    var avatarImage: UIImage?
     
     public
     var error: StackExchangeError?
@@ -66,5 +70,22 @@ extension StackExchangeState
         let item: QuestionItem? = self.topQuestions.first(where: { $0.id == questionId })
         
         self.questionItem = item
+    }
+    
+    mutating
+    func updateQuestionItem(_ question: QuestionItem?)
+    {
+        guard let question = question, question.id == self.questionItem?.id else {
+            
+            return
+        }
+        
+        self.questionItem = question
+    }
+    
+    mutating
+    func updateAvatarImage(_ image: UIImage?)
+    {
+        self.avatarImage = image
     }
 }
