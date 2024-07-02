@@ -13,11 +13,18 @@ func kReducer(state: StackExchangeState, action: StackExchangeAction) -> StackEx
     
     var newState = state
     newState.error = nil
+    newState.updateAvatarImage(nil)
     
     switch action {
         
         case let .fetchTopQuestionsResponse(questions, page):
             newState.updateTopQuestions(questions, in: page)
+        
+        case let .fetchQuestionResponse(question):
+            newState.updateQuestionItem(question)
+        
+        case let .fetchImageResponse(image):
+            newState.updateAvatarImage(image)
         
         case let .error(error):
             newState.error = error
@@ -33,4 +40,11 @@ public
 typealias StackExchangeStore = Store<StackExchangeState, StackExchangeAction>
 
 @MainActor
-let kStackExchangeStore: StackExchangeStore = Store(initialState: StackExchangeState(), reducer: kReducer, middlewares: [ApiMiddware, ErrorMiddware])
+let kStackExchangeStore = StackExchangeStore(initialState: StackExchangeState(),
+                                                  reducer: kReducer,
+                                              middlewares: [
+                                                                ApiMiddware,
+                                                                ImageDownloaderMiddware,
+                                                                ErrorMiddware
+                                                            ]
+                                            )

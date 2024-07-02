@@ -41,6 +41,37 @@ class ViewController: UIViewController
         super.init(coder: coder)
     }
     
+    // MARK: View Live Cycle
+    
+    public override 
+    func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.tintColor = .black
+    }
+    
+    public override 
+    func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    public override 
+    func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        
+    }
+    
+    public override 
+    func viewDidDisappear(_ animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        
+    }
+    
     public override
     func viewDidLoad()
     {
@@ -62,7 +93,7 @@ class ViewController: UIViewController
     
     deinit
     {
-        self.cancellables.forEach { $0.cancel() }
+        self.cancellables.forEach({ $0.cancel() })
     }
 }
 
@@ -76,7 +107,9 @@ extension ViewController
         self.store
             .$state
             .throttle(for: 1.0, scheduler: DispatchQueue.main, latest: false)
-            .sink { [weak self] state in
+            .sink {
+                
+                [weak self] state in
                 
                 self?.updateView(with: state)
             }
@@ -110,16 +143,6 @@ extension ViewController
             
             self.presentErrorAlert(with: error)
         }
-    }
-    
-    func presentErrorAlert(with error: StackExchangeError)
-    {
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        let alertController = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
-        alertController.addAction(okAction)
-        
-        self.present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -182,9 +205,14 @@ extension ViewController: UITableViewDelegate
     public
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-//        let question = self.store.state.topQuestions[indexPath.row]
-//        
-//        let detailVC = QuestionDetailViewController(question: question)
-//        self.navigationController?.pushViewController(detailVC, animated: true)
+        let question = self.store.state.topQuestions[indexPath.row]
+        
+        guard let questionId = question.id else {
+            
+            return
+        }
+        
+        let coordinator = Coordinator.shared
+        coordinator.nextPage(.questionDetail(questionId, self.store), from: self)
     }
 }

@@ -30,6 +30,17 @@ let ApiMiddware: Middleware<StackExchangeState, StackExchangeAction> = {
                 return
             }
             
+            if case let StackExchangeAction.fetchQuestion(request) = action {
+                
+                Task {
+                    
+                    let newAction: StackExchangeAction = await fetchQuestion(with: request)
+                    
+                    next(newAction)
+                }
+                return
+            }
+            
             next(action)
         }
     }
@@ -54,6 +65,25 @@ func fetchTopQuestions(with request: QuestionsRequest) async -> StackExchangeAct
         let questions: Array<QuestionItem> = response.items
         
         let newAction = StackExchangeAction.fetchTopQuestionsResponse(questions, page)
+        
+        return newAction
+    } catch {
+        
+        let newAction = StackExchangeAction.fetchApiError(error)
+        
+        return newAction
+    }
+}
+
+private
+func fetchQuestion(with request: QuestionsRequest) async -> StackExchangeAction
+{
+    do {
+        
+        let response: QuestionsResponse = try await apiRequest(request)
+        let questions: Array<QuestionItem> = response.items
+        
+        let newAction = StackExchangeAction.fetchQuestionResponse(questions.first)
         
         return newAction
     } catch {

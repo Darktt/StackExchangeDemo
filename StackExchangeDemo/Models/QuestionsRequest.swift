@@ -52,4 +52,11 @@ struct QuestionsRequest: APIRequest
     {
         self.parameters?["filter"] = "L7V2EDvuysm0H*BIB_.(egYSjq"
     }
+    
+    public
+    init(with questionId: Int)
+    {
+        self.apiName = APIName.questions(with: questionId)
+        self.parameters?["filter"] = ")3fFI)sF9pUF13d.QOYHh2wF41eBt2dc"
+    }
 }

@@ -38,6 +38,12 @@
 		F2C571192C324697005E224E /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C571172C324697005E224E /* QuestionCell.xib */; };
 		F2C5711C2C324827005E224E /* CustomCellRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5711A2C324827005E224E /* CustomCellRegisterable.swift */; };
 		F2C5711D2C324827005E224E /* CustomReusableViewRegistrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5711B2C324827005E224E /* CustomReusableViewRegistrable.swift */; };
+		F2C5711F2C328A19005E224E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5711E2C328A19005E224E /* Coordinator.swift */; };
+		F2C571222C328CB6005E224E /* QuestionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571202C328CB6005E224E /* QuestionDetailController.swift */; };
+		F2C571232C328CB6005E224E /* QuestionDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C571212C328CB6005E224E /* QuestionDetailController.xib */; };
+		F2C571262C33999E005E224E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571252C33999E005E224E /* ViewControllerExtension.swift */; };
+		F2C571282C33A5A0005E224E /* ImageDownloaderMiddware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571272C33A5A0005E224E /* ImageDownloaderMiddware.swift */; };
+		F2C5712A2C33AD6B005E224E /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571292C33AD6B005E224E /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,6 +91,12 @@
 		F2C571172C324697005E224E /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		F2C5711A2C324827005E224E /* CustomCellRegisterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCellRegisterable.swift; path = "../../../../Documents/Xcode/DTTest-Swift/DTTest/Classes/Protocol/CustomCellRegisterable.swift"; sourceTree = "<group>"; };
 		F2C5711B2C324827005E224E /* CustomReusableViewRegistrable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReusableViewRegistrable.swift; sourceTree = "<group>"; };
+		F2C5711E2C328A19005E224E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F2C571202C328CB6005E224E /* QuestionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailController.swift; sourceTree = "<group>"; };
+		F2C571212C328CB6005E224E /* QuestionDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionDetailController.xib; sourceTree = "<group>"; };
+		F2C571252C33999E005E224E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		F2C571272C33A5A0005E224E /* ImageDownloaderMiddware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderMiddware.swift; sourceTree = "<group>"; };
+		F2C571292C33AD6B005E224E /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,10 +135,13 @@
 			children = (
 				F26BA0142C2D410F0016E88E /* AppDelegate.swift */,
 				F26BA01D2C2D41100016E88E /* Assets.xcassets */,
+				F2C571242C339970005E224E /* Extensions */,
 				F26BA0222C2D41100016E88E /* Info.plist */,
 				F26BA01F2C2D41100016E88E /* LaunchScreen.storyboard */,
 				F26BA02D2C2D441A0016E88E /* Models */,
 				F26BA0352C2D44EC0016E88E /* Protocol */,
+				F2C571202C328CB6005E224E /* QuestionDetailController.swift */,
+				F2C571212C328CB6005E224E /* QuestionDetailController.xib */,
 				F26BA03C2C2D47BB0016E88E /* Redux */,
 				F26BA0162C2D410F0016E88E /* SceneDelegate.swift */,
 				F26BA0182C2D410F0016E88E /* ViewController.swift */,
@@ -154,8 +169,10 @@
 				F26BA02F2C2D442F0016E88E /* FluentInterface.swift */,
 				F26BA02E2C2D442F0016E88E /* FluentInterface+CustomCellRegisterable.swift */,
 				F26BA0442C2D5C920016E88E /* QuestionsRequest.swift */,
+				F2C5711E2C328A19005E224E /* Coordinator.swift */,
 				F26BA04C2C2D61CC0016E88E /* QuestionsResponse.swift */,
 				F26BA04E2C2D62F20016E88E /* User.swift */,
+				F2C571292C33AD6B005E224E /* ImageDownloader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				F26BA0572C2E48E40016E88E /* ApiMiddware.swift */,
+				F2C571272C33A5A0005E224E /* ImageDownloaderMiddware.swift */,
 				F2B76A8E2C2EA97700D46C25 /* ErrorMiddware.swift */,
 				F26BA0532C2D65CE0016E88E /* StackExchangeAction.swift */,
 				F2B76A902C2EABE600D46C25 /* StackExchangeError.swift */,
@@ -199,6 +217,14 @@
 				F2C571172C324697005E224E /* QuestionCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F2C571242C339970005E224E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2C571252C33999E005E224E /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +297,7 @@
 				F26BA01E2C2D41100016E88E /* Assets.xcassets in Resources */,
 				F2C571192C324697005E224E /* QuestionCell.xib in Resources */,
 				F26BA03A2C2D45F40016E88E /* ViewController.xib in Resources */,
+				F2C571232C328CB6005E224E /* QuestionDetailController.xib in Resources */,
 				F26BA0212C2D41100016E88E /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +309,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C571262C33999E005E224E /* ViewControllerExtension.swift in Sources */,
+				F2C571282C33A5A0005E224E /* ImageDownloaderMiddware.swift in Sources */,
+				F2C5712A2C33AD6B005E224E /* ImageDownloader.swift in Sources */,
 				F26BA0192C2D410F0016E88E /* ViewController.swift in Sources */,
 				F2B76A932C2EAC7600D46C25 /* StackExchangeStore.swift in Sources */,
 				F2B76A912C2EABE600D46C25 /* StackExchangeError.swift in Sources */,
@@ -290,6 +320,7 @@
 				F26BA0302C2D442F0016E88E /* FluentInterface+CustomCellRegisterable.swift in Sources */,
 				F26BA0432C2D49AE0016E88E /* APIHandler.swift in Sources */,
 				F26BA03D2C2D47BB0016E88E /* Store.swift in Sources */,
+				F2C5711F2C328A19005E224E /* Coordinator.swift in Sources */,
 				F2B76A8F2C2EA97700D46C25 /* ErrorMiddware.swift in Sources */,
 				F26BA0152C2D410F0016E88E /* AppDelegate.swift in Sources */,
 				F26BA04F2C2D62F20016E88E /* User.swift in Sources */,
@@ -303,6 +334,7 @@
 				F2C5711D2C324827005E224E /* CustomReusableViewRegistrable.swift in Sources */,
 				F26BA0562C2D67CC0016E88E /* StackExchangeState.swift in Sources */,
 				F26BA0412C2D49AE0016E88E /* APIRequest.swift in Sources */,
+				F2C571222C328CB6005E224E /* QuestionDetailController.swift in Sources */,
 				F2C571182C324697005E224E /* QuestionCell.swift in Sources */,
 				F26BA0172C2D410F0016E88E /* SceneDelegate.swift in Sources */,
 			);
@@ -374,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -431,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
