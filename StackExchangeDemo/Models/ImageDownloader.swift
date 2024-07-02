@@ -50,20 +50,19 @@ class ImageDownloader
         
         let statusCode: Int = response.statusCode
         
-        if statusCode != 200 {
+        if let statusCode = HTTPError.StatusCode(rawValue: statusCode) {
             
             let error = HTTPError(statusCode)
-            
             throw error
         }
         
-        if statusCode == 200 {
+        let cachedResponse = CachedURLResponse(response: response, data: data)
+        let image = UIImage(data: data)
+        
+        if image != nil {
             
-            let cachedResponse = CachedURLResponse(response: response, data: data)
             self.chachedImages.storeCachedResponse(cachedResponse, for: request)
         }
-        
-        let image = UIImage(data: data)
         
         return image
     }

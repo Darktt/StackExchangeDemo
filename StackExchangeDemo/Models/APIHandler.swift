@@ -47,6 +47,7 @@ class APIHandler
             throw HTTPError(statusCode)
         }
         
+//        self.logJsonString(response.0)
         let responseObject = try Request.Response.decode(with: response.0)
         
         return responseObject
@@ -65,10 +66,14 @@ class APIHandler
                 
                 data in
                 
-                Result {
+                let result = Result {
                     
                     try Request.Response.decode(with: data)
                 }
+                
+//                self.logJsonString(data)
+                
+                return result
             }
             
             completion(newResult)
