@@ -2,7 +2,7 @@
 //  QuestionDetailController.swift
 //  StackExchangeDemo
 //
-//  Created by Eden on 2024/7/1.
+//  Created by Darktt on 2024/7/1.
 //
 
 import UIKit
