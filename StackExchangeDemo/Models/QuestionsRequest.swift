@@ -44,21 +44,6 @@ struct QuestionsRequest: APIRequest
         }
     }
     
-    public
-    var questionId: Int? = nil {
-        
-        willSet {
-            
-            guard let questionId = newValue else {
-                
-                return
-            }
-            
-            self.apiName = APIName.questions(with: questionId)
-            self.parameters?["filter"] = ")3fFI)sF9pUF13d.QOYHh2wF41eBt2dc"
-        }
-    }
-    
     // MARK: - Methods -
     // MARK: Initial Method
     
@@ -66,5 +51,12 @@ struct QuestionsRequest: APIRequest
     init()
     {
         self.parameters?["filter"] = "L7V2EDvuysm0H*BIB_.(egYSjq"
+    }
+    
+    public
+    init(with questionId: Int)
+    {
+        self.apiName = APIName.questions(with: questionId)
+        self.parameters?["filter"] = ")3fFI)sF9pUF13d.QOYHh2wF41eBt2dc"
     }
 }

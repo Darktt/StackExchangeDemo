@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 public class QuestionDetailController: UIViewController
 {
@@ -49,6 +50,9 @@ public class QuestionDetailController: UIViewController
     
     private
     let store: StackExchangeStore
+    
+    private
+    var cancellables: Set<AnyCancellable> = []
     
     // MARK: - Methods -
     // MARK: Initial Method
@@ -124,6 +128,7 @@ public class QuestionDetailController: UIViewController
         self.scoreLabel.text = "\(questionItem?.score ?? 0)"
         self.answersLabel.text = "\(questionItem?.answerCount ?? 0)"
         self.viewsLabel.text = views
+        self.contentLabel.text = nil
         self.contentLoadingView.fluent
             .hidesWhenStopped(true)
             .subject
@@ -135,11 +140,14 @@ public class QuestionDetailController: UIViewController
             .startAnimating()
         self.ownerNameLabel.text = nil
         self.reputationLabel.text = "0"
+        
+        self.setupSubscribes()
+        self.fetchQuestionItem()
     }
     
     deinit
     {
-        
+        self.cancellables.forEach({ $0.cancel() })
     }
 }
 
@@ -154,5 +162,74 @@ private extension QuestionDetailController
 
 private extension QuestionDetailController
 {
+    func setupSubscribes()
+    {
+        self.store
+            .$state
+            .throttle(for: 1.0, scheduler: DispatchQueue.main, latest: false)
+            .sink {
+                
+                [weak self] state in
+                
+                self?.updateView(with: state)
+            }
+            .store(in: &self.cancellables)
+    }
     
+    func fetchQuestionItem()
+    {
+        guard let questionId: Int = self.store.state.questionItem?.id else
+        {
+            return
+        }
+        
+        let request = QuestionsRequest(with: questionId)
+        
+        self.store.dispatch(.fetchQuestion(request))
+    }
+    
+    func fetchAvatarImage(with url: URL)
+    {
+        self.store.dispatch(.fetchImage(url))
+    }
+    
+    func updateView(with state: StackExchangeState)
+    {
+        if let questionItem = state.questionItem {
+            
+            questionItem.body.unwrapped {
+                
+                body in
+                
+                let attributedContent = try? NSAttributedString(markdown: body)
+                
+                self.contentLoadingView.stopAnimating()
+                self.contentLabel.attributedText = attributedContent
+            }
+            
+            questionItem.owner.unwrapped {
+                
+                user in
+                
+                self.ownerNameLabel.text = user.name
+                self.reputationLabel.text = "\(user.reputation ?? 0)"
+                
+                if let imageUrl: URL = user.profileImageURL {
+                    
+                    self.fetchAvatarImage(with: imageUrl)
+                }
+            }
+        }
+        
+        if let avatarImage = state.avatarImage {
+            
+            self.avatarLoadingView.stopAnimating()
+            self.avatarImageView.image = avatarImage
+        }
+        
+        if let error = state.error {
+            
+            self.presentErrorAlert(with: error)
+        }
+    }
 }

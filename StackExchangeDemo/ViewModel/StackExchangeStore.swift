@@ -13,6 +13,7 @@ func kReducer(state: StackExchangeState, action: StackExchangeAction) -> StackEx
     
     var newState = state
     newState.error = nil
+    newState.updateAvatarImage(nil)
     
     switch action {
         
@@ -22,8 +23,8 @@ func kReducer(state: StackExchangeState, action: StackExchangeAction) -> StackEx
         case let .fetchQuestionResponse(question):
             newState.updateQuestionItem(question)
         
-        case let .fetchImageResponse(image, url):
-            newState.
+        case let .fetchImageResponse(image):
+            newState.updateAvatarImage(image)
         
         case let .error(error):
             newState.error = error

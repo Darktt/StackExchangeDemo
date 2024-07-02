@@ -41,6 +41,7 @@
 		F2C5711F2C328A19005E224E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5711E2C328A19005E224E /* Coordinator.swift */; };
 		F2C571222C328CB6005E224E /* QuestionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571202C328CB6005E224E /* QuestionDetailController.swift */; };
 		F2C571232C328CB6005E224E /* QuestionDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C571212C328CB6005E224E /* QuestionDetailController.xib */; };
+		F2C571262C33999E005E224E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571252C33999E005E224E /* ViewControllerExtension.swift */; };
 		F2C571282C33A5A0005E224E /* ImageDownloaderMiddware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571272C33A5A0005E224E /* ImageDownloaderMiddware.swift */; };
 		F2C5712A2C33AD6B005E224E /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571292C33AD6B005E224E /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		F2C5711E2C328A19005E224E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F2C571202C328CB6005E224E /* QuestionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailController.swift; sourceTree = "<group>"; };
 		F2C571212C328CB6005E224E /* QuestionDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionDetailController.xib; sourceTree = "<group>"; };
+		F2C571252C33999E005E224E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		F2C571272C33A5A0005E224E /* ImageDownloaderMiddware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderMiddware.swift; sourceTree = "<group>"; };
 		F2C571292C33AD6B005E224E /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +219,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F2C571242C339970005E224E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2C571252C33999E005E224E /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C571262C33999E005E224E /* ViewControllerExtension.swift in Sources */,
 				F2C571282C33A5A0005E224E /* ImageDownloaderMiddware.swift in Sources */,
 				F2C5712A2C33AD6B005E224E /* ImageDownloader.swift in Sources */,
 				F26BA0192C2D410F0016E88E /* ViewController.swift in Sources */,

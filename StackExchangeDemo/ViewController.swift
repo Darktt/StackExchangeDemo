@@ -48,6 +48,7 @@ class ViewController: UIViewController
     {
         super.viewWillAppear(animated)
         
+        self.navigationController?.navigationBar.tintColor = .black
     }
     
     public override 
@@ -92,7 +93,7 @@ class ViewController: UIViewController
     
     deinit
     {
-        self.cancellables.forEach { $0.cancel() }
+        self.cancellables.forEach({ $0.cancel() })
     }
 }
 
@@ -106,7 +107,9 @@ extension ViewController
         self.store
             .$state
             .throttle(for: 1.0, scheduler: DispatchQueue.main, latest: false)
-            .sink { [weak self] state in
+            .sink {
+                
+                [weak self] state in
                 
                 self?.updateView(with: state)
             }
@@ -140,16 +143,6 @@ extension ViewController
             
             self.presentErrorAlert(with: error)
         }
-    }
-    
-    func presentErrorAlert(with error: StackExchangeError)
-    {
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        let alertController = UIAlertController(title: "Error", message: error.message, preferredStyle: .alert)
-        alertController.addAction(okAction)
-        
-        self.present(alertController, animated: true, completion: nil)
     }
 }
 
