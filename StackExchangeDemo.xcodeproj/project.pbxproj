@@ -31,6 +31,7 @@
 		F26BA0542C2D65CE0016E88E /* StackExchangeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26BA0532C2D65CE0016E88E /* StackExchangeAction.swift */; };
 		F26BA0562C2D67CC0016E88E /* StackExchangeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26BA0552C2D67CC0016E88E /* StackExchangeState.swift */; };
 		F26BA0582C2E48E40016E88E /* ApiMiddware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26BA0572C2E48E40016E88E /* ApiMiddware.swift */; };
+		F2B0B0012C34E37100680EBE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F2B0B0002C34E37100680EBE /* README.md */; };
 		F2B76A8F2C2EA97700D46C25 /* ErrorMiddware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B76A8E2C2EA97700D46C25 /* ErrorMiddware.swift */; };
 		F2B76A912C2EABE600D46C25 /* StackExchangeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B76A902C2EABE600D46C25 /* StackExchangeError.swift */; };
 		F2B76A932C2EAC7600D46C25 /* StackExchangeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B76A922C2EAC7600D46C25 /* StackExchangeStore.swift */; };
@@ -84,6 +85,7 @@
 		F26BA0532C2D65CE0016E88E /* StackExchangeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackExchangeAction.swift; sourceTree = "<group>"; };
 		F26BA0552C2D67CC0016E88E /* StackExchangeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackExchangeState.swift; sourceTree = "<group>"; };
 		F26BA0572C2E48E40016E88E /* ApiMiddware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiMiddware.swift; sourceTree = "<group>"; };
+		F2B0B0002C34E37100680EBE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F2B76A8E2C2EA97700D46C25 /* ErrorMiddware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMiddware.swift; sourceTree = "<group>"; };
 		F2B76A902C2EABE600D46C25 /* StackExchangeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackExchangeError.swift; sourceTree = "<group>"; };
 		F2B76A922C2EAC7600D46C25 /* StackExchangeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackExchangeStore.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		F26BA0082C2D410F0016E88E = {
 			isa = PBXGroup;
 			children = (
+				F2B0B0002C34E37100680EBE /* README.md */,
 				F26BA0132C2D410F0016E88E /* StackExchangeDemo */,
 				F26BA0122C2D410F0016E88E /* Products */,
 				F26BA0282C2D43C40016E88E /* Frameworks */,
@@ -294,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2B0B0012C34E37100680EBE /* README.md in Resources */,
 				F26BA01E2C2D41100016E88E /* Assets.xcassets in Resources */,
 				F2C571192C324697005E224E /* QuestionCell.xib in Resources */,
 				F26BA03A2C2D45F40016E88E /* ViewController.xib in Resources */,
