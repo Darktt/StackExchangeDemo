@@ -43,8 +43,8 @@
 		F2C571222C328CB6005E224E /* QuestionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571202C328CB6005E224E /* QuestionDetailController.swift */; };
 		F2C571232C328CB6005E224E /* QuestionDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C571212C328CB6005E224E /* QuestionDetailController.xib */; };
 		F2C571262C33999E005E224E /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571252C33999E005E224E /* ViewControllerExtension.swift */; };
-		F2C571282C33A5A0005E224E /* ImageDownloaderMiddware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571272C33A5A0005E224E /* ImageDownloaderMiddware.swift */; };
-		F2C5712A2C33AD6B005E224E /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571292C33AD6B005E224E /* ImageDownloader.swift */; };
+		F2C571282C33A5A0005E224E /* ImageLoaderMiddware.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571272C33A5A0005E224E /* ImageLoaderMiddware.swift */; };
+		F2C5712A2C33AD6B005E224E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571292C33AD6B005E224E /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,8 +97,8 @@
 		F2C571202C328CB6005E224E /* QuestionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailController.swift; sourceTree = "<group>"; };
 		F2C571212C328CB6005E224E /* QuestionDetailController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionDetailController.xib; sourceTree = "<group>"; };
 		F2C571252C33999E005E224E /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
-		F2C571272C33A5A0005E224E /* ImageDownloaderMiddware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderMiddware.swift; sourceTree = "<group>"; };
-		F2C571292C33AD6B005E224E /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		F2C571272C33A5A0005E224E /* ImageLoaderMiddware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderMiddware.swift; sourceTree = "<group>"; };
+		F2C571292C33AD6B005E224E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +175,7 @@
 				F2C5711E2C328A19005E224E /* Coordinator.swift */,
 				F26BA04C2C2D61CC0016E88E /* QuestionsResponse.swift */,
 				F26BA04E2C2D62F20016E88E /* User.swift */,
-				F2C571292C33AD6B005E224E /* ImageDownloader.swift */,
+				F2C571292C33AD6B005E224E /* ImageLoader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				F26BA0572C2E48E40016E88E /* ApiMiddware.swift */,
-				F2C571272C33A5A0005E224E /* ImageDownloaderMiddware.swift */,
+				F2C571272C33A5A0005E224E /* ImageLoaderMiddware.swift */,
 				F2B76A8E2C2EA97700D46C25 /* ErrorMiddware.swift */,
 				F26BA0532C2D65CE0016E88E /* StackExchangeAction.swift */,
 				F2B76A902C2EABE600D46C25 /* StackExchangeError.swift */,
@@ -314,8 +314,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2C571262C33999E005E224E /* ViewControllerExtension.swift in Sources */,
-				F2C571282C33A5A0005E224E /* ImageDownloaderMiddware.swift in Sources */,
-				F2C5712A2C33AD6B005E224E /* ImageDownloader.swift in Sources */,
+				F2C571282C33A5A0005E224E /* ImageLoaderMiddware.swift in Sources */,
+				F2C5712A2C33AD6B005E224E /* ImageLoader.swift in Sources */,
 				F26BA0192C2D410F0016E88E /* ViewController.swift in Sources */,
 				F2B76A932C2EAC7600D46C25 /* StackExchangeStore.swift in Sources */,
 				F2B76A912C2EABE600D46C25 /* StackExchangeError.swift in Sources */,

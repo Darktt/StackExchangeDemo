@@ -44,7 +44,7 @@ let kStackExchangeStore = StackExchangeStore(initialState: StackExchangeState(),
                                                   reducer: kReducer,
                                               middlewares: [
                                                                 ApiMiddware,
-                                                                ImageDownloaderMiddware,
+                                                                ImageLoaderMiddware,
                                                                 ErrorMiddware
                                                             ]
                                             )

@@ -1,5 +1,5 @@
 //
-//  ImageDownloaderMiddware.swift
+//  ImageLoaderMiddware.swift
 //  StackExchangeDemo
 //
 //  Created by Darktt on 2024/7/2.
@@ -10,7 +10,7 @@ import UIKit
 
 @MainActor
 public
-let ImageDownloaderMiddware: Middleware<StackExchangeState, StackExchangeAction> = {
+let ImageLoaderMiddware: Middleware<StackExchangeState, StackExchangeAction> = {
     
     store in
     
@@ -40,7 +40,7 @@ func fetchImage(url: URL) async -> StackExchangeAction
 {
     do {
         
-        let downloader = ImageDownloader.shared
+        let downloader = ImageLoader.shared
         let image: UIImage? = try await downloader.load(with: url)
         
         let newAction: StackExchangeAction = StackExchangeAction.fetchImageResponse(image)

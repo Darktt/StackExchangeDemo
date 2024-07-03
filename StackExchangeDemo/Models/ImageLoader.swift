@@ -1,5 +1,5 @@
 //
-//  ImageDownloader.swift
+//  ImageLoader.swift
 //  StackExchangeDemo
 //
 //  Created by Darktt on 2024/7/2.
@@ -10,12 +10,12 @@ import UIKit.UIImage
 import SwiftExtensions
 
 public final
-class ImageDownloader
+class ImageLoader
 {
     // MARK: - Properties -
     
     public static
-    let shared = ImageDownloader()
+    let shared = ImageLoader()
     
     private
     var chachedImages: URLCache = URLCache(memoryCapacity: 20 * 1024 * 1024, diskCapacity: 0)
