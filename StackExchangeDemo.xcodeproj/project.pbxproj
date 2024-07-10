@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2563F0C2C3E1C38007193E3 /* CustomCellRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2563F0B2C3E1C38007193E3 /* CustomCellRegisterable.swift */; };
 		F26BA0152C2D410F0016E88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26BA0142C2D410F0016E88E /* AppDelegate.swift */; };
 		F26BA0172C2D410F0016E88E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26BA0162C2D410F0016E88E /* SceneDelegate.swift */; };
 		F26BA0192C2D410F0016E88E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26BA0182C2D410F0016E88E /* ViewController.swift */; };
@@ -37,7 +38,6 @@
 		F2B76A932C2EAC7600D46C25 /* StackExchangeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B76A922C2EAC7600D46C25 /* StackExchangeStore.swift */; };
 		F2C571182C324697005E224E /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571162C324697005E224E /* QuestionCell.swift */; };
 		F2C571192C324697005E224E /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C571172C324697005E224E /* QuestionCell.xib */; };
-		F2C5711C2C324827005E224E /* CustomCellRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5711A2C324827005E224E /* CustomCellRegisterable.swift */; };
 		F2C5711D2C324827005E224E /* CustomReusableViewRegistrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5711B2C324827005E224E /* CustomReusableViewRegistrable.swift */; };
 		F2C5711F2C328A19005E224E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C5711E2C328A19005E224E /* Coordinator.swift */; };
 		F2C571222C328CB6005E224E /* QuestionDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C571202C328CB6005E224E /* QuestionDetailController.swift */; };
@@ -62,6 +62,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F2563F0B2C3E1C38007193E3 /* CustomCellRegisterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCellRegisterable.swift; sourceTree = "<group>"; };
 		F26BA0112C2D410F0016E88E /* StackExchangeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackExchangeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F26BA0142C2D410F0016E88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F26BA0162C2D410F0016E88E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		F2B76A922C2EAC7600D46C25 /* StackExchangeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackExchangeStore.swift; sourceTree = "<group>"; };
 		F2C571162C324697005E224E /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		F2C571172C324697005E224E /* QuestionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
-		F2C5711A2C324827005E224E /* CustomCellRegisterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCellRegisterable.swift; path = "../../../../Documents/Xcode/DTTest-Swift/DTTest/Classes/Protocol/CustomCellRegisterable.swift"; sourceTree = "<group>"; };
 		F2C5711B2C324827005E224E /* CustomReusableViewRegistrable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReusableViewRegistrable.swift; sourceTree = "<group>"; };
 		F2C5711E2C328A19005E224E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F2C571202C328CB6005E224E /* QuestionDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDetailController.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		F26BA0352C2D44EC0016E88E /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				F2C5711A2C324827005E224E /* CustomCellRegisterable.swift */,
+				F2563F0B2C3E1C38007193E3 /* CustomCellRegisterable.swift */,
 				F2C5711B2C324827005E224E /* CustomReusableViewRegistrable.swift */,
 				F26BA0502C2D643B0016E88E /* JsonDecodable.swift */,
 				F26BA0342C2D44EC0016E88E /* RawReferenceConvertible.swift */,
@@ -319,12 +319,12 @@
 				F26BA0192C2D410F0016E88E /* ViewController.swift in Sources */,
 				F2B76A932C2EAC7600D46C25 /* StackExchangeStore.swift in Sources */,
 				F2B76A912C2EABE600D46C25 /* StackExchangeError.swift in Sources */,
-				F2C5711C2C324827005E224E /* CustomCellRegisterable.swift in Sources */,
 				F26BA0312C2D442F0016E88E /* FluentInterface.swift in Sources */,
 				F26BA0302C2D442F0016E88E /* FluentInterface+CustomCellRegisterable.swift in Sources */,
 				F26BA0432C2D49AE0016E88E /* APIHandler.swift in Sources */,
 				F26BA03D2C2D47BB0016E88E /* Store.swift in Sources */,
 				F2C5711F2C328A19005E224E /* Coordinator.swift in Sources */,
+				F2563F0C2C3E1C38007193E3 /* CustomCellRegisterable.swift in Sources */,
 				F2B76A8F2C2EA97700D46C25 /* ErrorMiddware.swift in Sources */,
 				F26BA0152C2D410F0016E88E /* AppDelegate.swift in Sources */,
 				F26BA04F2C2D62F20016E88E /* User.swift in Sources */,
