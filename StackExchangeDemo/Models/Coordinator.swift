@@ -15,6 +15,15 @@ class Coordinator
     public static
     let shared: Coordinator = Coordinator()
     
+    fileprivate
+    lazy var navigationDelegate: NavigationDelegate = {
+        
+        NavigationDelegate(parent: self)
+    }()
+    
+    fileprivate
+    var currentViewController: UIViewController?
+    
     // MARK: - Methods -
     // MARK: Initial Method
     
@@ -25,15 +34,12 @@ class Coordinator
     }
     
     public
-    func nextPage(_ page: Page, from viewController: UIViewController)
+    func nextPage(_ page: Page)
     {
         switch page
         {
             case let .questionDetail(questionId, store):
-                self.showQuestionDetail(with: questionId, store: store, from: viewController)
-            
-            case let .back(animated, completion):
-                viewController.dismiss(animated: animated, completion: completion)
+                self.showQuestionDetail(with: questionId, store: store)
         }
     }
     
@@ -48,11 +54,43 @@ class Coordinator
 private
 extension Coordinator
 {
-    func showQuestionDetail(with questionId: Int, store: StackExchangeStore, from viewController: UIViewController)
+    func showQuestionDetail(with questionId: Int, store: StackExchangeStore)
     {
+        guard let viewController = self.currentViewController else {
+            
+            return
+        }
+        
         let questionDetailController = QuestionDetailController(with: questionId, store: store)
         
         viewController.navigationController?.pushViewController(questionDetailController, animated: true)
+    }
+}
+
+// MARK: - Coordinator.NavigationDelegate -
+
+private
+extension Coordinator
+{
+    class NavigationDelegate: NSObject
+    {
+        fileprivate
+        unowned var parent: Coordinator!
+        
+        fileprivate
+        init(parent: Coordinator) {
+            
+            self.parent = parent
+        }
+    }
+}
+
+extension Coordinator.NavigationDelegate: UINavigationControllerDelegate
+{
+    public
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool)
+    {
+        self.parent.currentViewController = viewController
     }
 }
 
@@ -64,7 +102,28 @@ extension Coordinator
     enum Page
     {
         case questionDetail(Int, StackExchangeStore)
+    }
+}
+
+// MARK: - UINavigationController -
+
+extension UINavigationController
+{
+    open override
+    func awakeFromNib() 
+    {
+        super.awakeFromNib()
         
-        case back(Bool, (() -> Void)? = nil)
+    }
+    
+    open override 
+    func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        let coordinator = Coordinator.shared
+        coordinator.currentViewController = self.viewControllers.first
+        
+        self.delegate = coordinator.navigationDelegate
     }
 }

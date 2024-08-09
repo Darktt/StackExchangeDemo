@@ -213,6 +213,6 @@ extension ViewController: UITableViewDelegate
         }
         
         let coordinator = Coordinator.shared
-        coordinator.nextPage(.questionDetail(questionId, self.store), from: self)
+        coordinator.nextPage(.questionDetail(questionId, self.store))
     }
 }
