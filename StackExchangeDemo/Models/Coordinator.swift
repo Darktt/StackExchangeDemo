@@ -22,6 +22,12 @@ class Coordinator
     }()
     
     fileprivate
+    lazy var tabBarDelegate: TabBarDelegate = {
+        
+        TabBarDelegate(parent: self)
+    }()
+    
+    fileprivate
     var currentViewController: UIViewController?
     
     // MARK: - Methods -
@@ -88,7 +94,34 @@ extension Coordinator
 extension Coordinator.NavigationDelegate: UINavigationControllerDelegate
 {
     public
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool)
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool)
+    {
+        self.parent.currentViewController = viewController
+    }
+}
+
+// MARK: - Coordinator.TabBarDelegate -
+
+private
+extension Coordinator
+{
+    class TabBarDelegate: NSObject
+    {
+        fileprivate
+        unowned var parent: Coordinator!
+        
+        fileprivate
+        init(parent: Coordinator) {
+            
+            self.parent = parent
+        }
+    }
+}
+
+extension Coordinator.TabBarDelegate: UITabBarControllerDelegate
+{
+    public
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController)
     {
         self.parent.currentViewController = viewController
     }
@@ -109,13 +142,6 @@ extension Coordinator
 
 extension UINavigationController
 {
-    open override
-    func awakeFromNib() 
-    {
-        super.awakeFromNib()
-        
-    }
-    
     open override 
     func viewDidLoad()
     {
@@ -125,5 +151,31 @@ extension UINavigationController
         coordinator.currentViewController = self.viewControllers.first
         
         self.delegate = coordinator.navigationDelegate
+    }
+}
+
+// MARK: - UITabbarController -
+
+extension UITabBarController
+{
+    open override 
+    func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        let viewController: UIViewController? = {
+            
+            guard let viewController = self.selectedViewController as? UINavigationController else {
+                
+                return self.selectedViewController
+            }
+            
+            return viewController.topViewController
+        }()
+        
+        let coordinator = Coordinator.shared
+        coordinator.currentViewController = viewController
+        
+        self.delegate = coordinator.tabBarDelegate
     }
 }
