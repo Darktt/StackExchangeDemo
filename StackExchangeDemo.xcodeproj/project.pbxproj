@@ -169,13 +169,13 @@
 				F26BA0402C2D49AE0016E88E /* APIHandler.swift */,
 				F26BA03F2C2D49AE0016E88E /* APIName.swift */,
 				F26BA03E2C2D49AE0016E88E /* APIRequest.swift */,
+				F2C5711E2C328A19005E224E /* Coordinator.swift */,
 				F26BA02F2C2D442F0016E88E /* FluentInterface.swift */,
 				F26BA02E2C2D442F0016E88E /* FluentInterface+CustomCellRegisterable.swift */,
+				F2C571292C33AD6B005E224E /* ImageLoader.swift */,
 				F26BA0442C2D5C920016E88E /* QuestionsRequest.swift */,
-				F2C5711E2C328A19005E224E /* Coordinator.swift */,
 				F26BA04C2C2D61CC0016E88E /* QuestionsResponse.swift */,
 				F26BA04E2C2D62F20016E88E /* User.swift */,
-				F2C571292C33AD6B005E224E /* ImageLoader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

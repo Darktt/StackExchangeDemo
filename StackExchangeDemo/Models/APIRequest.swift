@@ -31,15 +31,18 @@ extension APIRequest
         
         var url: URL = self.apiName.url
         
-        if #available(iOS 16.0, *) {
+        if method == .get {
             
-            url.append(queryItems: self.parameters?.queryItems() ?? [])
-        } else {
-            
-            var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
-            urlComponents?.queryItems = self.parameters?.queryItems()
-            
-            url = urlComponents?.url ?? url
+            if #available(iOS 16.0, *) {
+                
+                url.append(queryItems: self.parameters?.queryItems() ?? [])
+            } else {
+                
+                var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
+                urlComponents?.queryItems = self.parameters?.queryItems()
+                
+                url = urlComponents?.url ?? url
+            }
         }
         
         var request = URLRequest(url: url)
